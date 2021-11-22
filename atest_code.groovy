@@ -28,7 +28,7 @@ pipeline{
         stage("store to s3"){
             steps{
                 println"the artifact stored"
-                sh "aws s3 cp /target/hello-${BUILD_NUMBER}.war s3://alltime/${BRANCH_NAME}/hello-${BUILD_NUMBER}/"
+                sh "aws s3 cp hello-${BUILD_NUMBER}.war s3://alltime/${BRANCH_NAME}/hello-${BUILD_NUMBER}/"
             }
         }
         stage("download to present location"){
