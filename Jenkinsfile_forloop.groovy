@@ -18,6 +18,7 @@ pipeline{
             echo "here er can use scp command"
             scp -o strictHostKeychecking=no -i /tmp/awsaws.pem hello-${BUILD_NUMBER}.war ec2-user@ip:/var/lib/tomcat/webapps
             done
+            '''
         }
     }
 }
