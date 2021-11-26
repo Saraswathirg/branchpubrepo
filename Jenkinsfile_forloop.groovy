@@ -1,5 +1,11 @@
 pipeline{
     agent any
+    parameters{
+        string(name:'BRANCH',defaultValue:'master')
+        string(name:'BUILD_NUMBER',defaultValue:'')
+        string(name:'SERVERIP',defaultValue:'')
+
+    }
     stages{
         stage("multiple servers"){
             sh'''
