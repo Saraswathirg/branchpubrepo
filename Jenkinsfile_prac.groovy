@@ -3,6 +3,7 @@ pipeline{
     agent any
     parameters{
         string(name:'BRANCH',defaultValue:'master',description:'enter the branch')
+    }
     stages{
         stage("clone the code"){
             steps{
@@ -30,4 +31,3 @@ pipeline{
         }
         }
     }
-}
