@@ -9,8 +9,6 @@ pipeline{
     stages{
         stage("multiple servers"){
             steps{
-            //ssh -o strictHostkeychecking=no -i /tmp/awsaws.pem ec2-user@$ip "hostname"
-            //# process "$i" 
             sh'''
             aws s3 cp s3://alltime/${BRANCH}/${BUILD_NUMBER}/hello-${BUILD_NUMBER}.war .
             ls -l
