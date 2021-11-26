@@ -9,6 +9,8 @@ pipeline{
     stages{
         stage("multiple servers"){
             steps{
+            //ssh -o strictHostkeychecking=no -i /tmp/awsaws.pem ec2-user@$ip "hostname"
+            //# process "$i" 
             sh'''
             aws s3 cp s3://alltime/${BRANCH}/${BUILD_NUMBER}/hello-${BUILD_NUMBER}.war .
             ls -l
@@ -17,9 +19,7 @@ pipeline{
             do 
             echo $ip
             echo "here er can use scp command"
-            scp -o strictHostkeychecking=no -i /tmp/awsaws.pem hello-${BUILD_NUMBER}.war ec2-user@ip:/var/lib/tomcat/webapps
-            ssh -o strictHostkeychecking=no -i /tmp/awsaws.pem ec2-user@$ip "hostname"
-            # process "$i" 
+            scp -o strictHostkeychecking=no -i /tmp/awsaws.pem hello-${BUILD_NUMBER}.war ec2-user@$ip:/var/lib/tomcat/webapps
             done
             '''
             }
