@@ -25,8 +25,7 @@ pipeline{
         stage("the artifact is stored"){
             steps{
                 println "the artifact is stored"
-                sh"
-                aws s3 cp target/hello-${BUILD}.war s3://alltime/${BRANCH}/${BUILD}/"
+                sh "aws s3 cp target/hello-${BUILD}.war s3://alltime/${BRANCH}/${BUILD}/"
             }
         }
     }
