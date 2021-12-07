@@ -10,7 +10,7 @@ pipeline{
                 checkout([
                     $class:'GitSCM',
                     branches:[[name='${BRANCH}']],
-                    userRemoteConfigs:[[url'https://github.com/Saraswathirg/branchpubrepo.git']]
+                    userRemoteConfigs:[[url:'https://github.com/Saraswathirg/branchpubrepo.git']]
                 ])
             }
         }
