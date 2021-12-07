@@ -1,7 +1,7 @@
 pipeline{
     agent any
     parameters{
-        string(name='BRANCH',defaultValue='master',description='enter the branch name')
+        string(name:'BRANCH',defaultValue:'master',description:'enter the branch name')
     }
     stages{
         stage("check updates in repo"){
