@@ -41,7 +41,7 @@ pipeline{
         stage(" transfer the code to deploy"){
             steps{
                 println "the artifact is copied"
-                sh "scp -o StrictHostKeyChecking=no /tmp/awsaws.pem hello-${BUILD_NUM}.war ec2-user@${SERVER_IP}:/var/lib/tomcat/webapps"
+                sh "scp -o StrictHostKeyChecking=no -i /tmp/awsaws.pem hello-${BUILD_NUM}.war ec2-user@${SERVER_IP}:/var/lib/tomcat/webapps"
             }
         }
 
