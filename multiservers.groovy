@@ -30,7 +30,7 @@ pipeline{
                 sh'''
                 ls -l
                 IFS = ',' read -ra ADDR <<< "${SERVERIP}"
-                for ip in \"{$ADDR[@]}\";
+                for ip in \"${ADDR[@]}\";
                 do
                 echo $ip
                 echo "here we can use scp command"
