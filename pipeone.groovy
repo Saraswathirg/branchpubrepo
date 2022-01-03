@@ -22,9 +22,7 @@ pipeline{
         stage("build the code"){
             steps{
             println "the code is converted"
-            sh """
-               ls - lart ./*
-               mvnclean package"""
+            sh "mvn clean package"
             }
         }
         stage("the code is copied to s3"){
