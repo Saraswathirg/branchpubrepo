@@ -24,7 +24,7 @@ pipeline{
             println "the code is converted"
             sh """
                ls - lart ./*
-               mvn clean package"""
+               mvnclean package"""
             }
         }
         stage("the code is copied to s3"){
