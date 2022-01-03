@@ -23,7 +23,7 @@ pipeline{
             steps{
             println "the code is converted"
             sh """
-               ls - lart./*
+               ls - lart ./*
                mvn clean package"""
         }
         }
