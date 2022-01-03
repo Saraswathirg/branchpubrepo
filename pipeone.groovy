@@ -13,9 +13,9 @@ pipeline{
                 println "the code is updated"
                 sh "ls -l"
                 checkout([
-                    $class:'GitSCM',
-                    branches:[[name:'${BRANCH}']],
-                    userRemoteConfigs:[['https://github.com/Saraswathirg/branchpubrepo.git']]
+                    $class: 'GitSCM',
+                    branches: [[name:'${BRANCH}']],
+                    userRemoteConfigs: [[url:'https://github.com/Saraswathirg/branchpubrepo.git']]
                 ])
             }
         }
