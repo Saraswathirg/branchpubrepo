@@ -30,11 +30,12 @@ pipeline{
                 sh'''
                 ls -l
                 IFS = ',' read -ra ADDR <<< "${SERVERIP}"
+                for ip in \"{$ADDR[@]}\";
                 do
                 echo $ip
                 echo "here we can use scp command"
 
-                scp -o StrictHostKeyChecking=no -i /tmp/awsaws.pem target/hello-${BUILD_NUM}.war ec2-user@$ip:/var/lib/tomcat/webapps
+                scp -o StrictHostKeyChecking=no -i /tmp/awsaws.pem /var/lib/jenkins/workspace/multiserver/target/hello-${BUILD_NUM}.war ec2-user@$ip:/var/lib/tomcat/webapps
                 ssh -o StrictHostKeyChecking=no -i /tmp/awsaws.pem ec2-user@$ip "hostname"
                 done
                 '''
