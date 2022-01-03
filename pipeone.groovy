@@ -25,7 +25,7 @@ pipeline{
             sh """
                ls - lart ./*
                mvn clean package"""
-        }
+            }
         }
         stage("the code is copied to s3"){
             steps{
