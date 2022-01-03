@@ -29,7 +29,7 @@ pipeline{
                 println "the code is copied to multiple servers"
                 sh'''
                 ls -l
-                IFS=',' read - ra ADDR <<< "${SERVERIP}"
+                IFS=',' read -ra ADDR <<< "${SERVERIP}"
                 for ip in \"${ADDR[@]}\";
                 do
                 echo $ip
