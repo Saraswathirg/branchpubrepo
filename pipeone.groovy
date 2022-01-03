@@ -15,7 +15,7 @@ pipeline{
                 checkout([
                     $class:'GitSCM',
                     branches:[[name:'${BRANCH}']],
-                    userRemoteConfigs:[['https://github.com/KuruvaSomaSekhar/boxfuse-sample-java-war-hello.git']]
+                    userRemoteConfigs:[['https://github.com/Saraswathirg/branchpubrepo.git']]
                 ])
             }
         }
