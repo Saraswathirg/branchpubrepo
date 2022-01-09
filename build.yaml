@@ -1,0 +1,9 @@
+---
+- name: build and deploy
+  hosts: apps
+  become: true
+  tasks: 
+     - name:
+       copy:
+        src = target/hello-*.war
+        dest = /var/lib/tomcat/webapps
