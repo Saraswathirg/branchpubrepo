@@ -5,5 +5,5 @@
   tasks: 
      - name:
        copy:
-        src = target/hello-*.war
-        dest = /var/lib/tomcat/webapps
+        src: target/hello-*.war
+        dest: /var/lib/tomcat/webapps
